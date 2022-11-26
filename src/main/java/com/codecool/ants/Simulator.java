@@ -6,4 +6,11 @@ public class Simulator {
         System.out.println("You can use `mvn package; java -jar target/ants-1.0.jar` to run this app from the console");
     }
 
+
+
+    public static void quit(){
+        System.exit(0);
+    }
+
+
 }
