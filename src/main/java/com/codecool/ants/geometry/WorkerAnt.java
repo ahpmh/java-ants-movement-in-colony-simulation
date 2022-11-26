@@ -8,7 +8,11 @@ public class WorkerAnt extends  Ants{
     }
 
 
-    public void act(){}
+    public void act(){
+
+
+
+    }
 
 
 }

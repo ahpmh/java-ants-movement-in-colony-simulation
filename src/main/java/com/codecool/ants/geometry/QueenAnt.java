@@ -9,7 +9,6 @@ public class QueenAnt extends Ants{
 
 
     public void act(){
+    }
 
-
-    };
 }
