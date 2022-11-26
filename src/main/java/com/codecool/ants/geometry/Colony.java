@@ -30,7 +30,6 @@ that set the number of drones, workers, and soldiers to be created*/
 
 /* update method which invokes each ants' act method*/
     private void update(){
-     act();
     }
 
 

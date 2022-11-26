@@ -1,12 +1,13 @@
 package com.codecool.ants.geometry;
 
 abstract public class Ants {
-    Position antsInBed;
-    String symbol;
+    protected Position antsInBed;
+    protected String symbol;
+    protected int boardWidth;
 
-
-    public Ants(Position position){
+    public Ants(Position position, int width){
         antsInBed = position;
+        boardWidth = width;
     }
 
     abstract public void act();
