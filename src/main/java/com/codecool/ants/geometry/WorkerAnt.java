@@ -1,14 +1,11 @@
 package com.codecool.ants.geometry;
 
-import java.util.logging.XMLFormatter;
-
 public class WorkerAnt extends  Ants{
 
     public WorkerAnt(Position position, int width){
         super(position, width);
         symbol = "W";
     }
-
 
     public void act(){
         Direction directionresult = Direction.getRandomDirection();
@@ -19,6 +16,5 @@ public class WorkerAnt extends  Ants{
             antsInBed.setY(newY);
         }
     }
-
 
 }

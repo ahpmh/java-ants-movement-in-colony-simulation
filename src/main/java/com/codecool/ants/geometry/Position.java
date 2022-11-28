@@ -1,5 +1,7 @@
 package com.codecool.ants.geometry;
 
+import java.util.Random;
+
 public class Position {
 
     public int x;
@@ -25,4 +27,12 @@ public class Position {
     public void setY(int y) {
         this.y = y;
     }
+
+    public static Position getRandomPosition(Random random, int boardWith) {
+        int randomX = random.nextInt(boardWith);
+        int randomY = random.nextInt(boardWith);
+        Position randomPosition = new Position(randomX,randomY);
+        return randomPosition;
+    }
+
 }

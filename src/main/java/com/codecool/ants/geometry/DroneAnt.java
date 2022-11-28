@@ -1,5 +1,4 @@
 package com.codecool.ants.geometry;
-
 public class DroneAnt extends Ants{
 
 
@@ -31,7 +30,5 @@ public class DroneAnt extends Ants{
             antsInBed.setX(newX);
             antsInBed.setY(newY);
         }
-
     }
-
 }

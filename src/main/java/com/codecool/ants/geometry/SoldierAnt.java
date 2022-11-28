@@ -7,6 +7,7 @@ public class SoldierAnt extends Ants{
     public SoldierAnt(Position position, int width){
         super(position, width);
         symbol = "S";
+        facingDirection = Direction.getRandomDirection();
     }
 
     public void act(){
