@@ -9,12 +9,11 @@ public class WorkerAnt extends  Ants{
 
     public void act(){
         Direction directionresult = Direction.getRandomDirection();
-        int newX = antsInBed.getX() + directionresult.getXDirection();
-        int newY = antsInBed.getY() + directionresult.getYDirection();
+        int newX = positionOfAnts.getX() + directionresult.getXDirection();
+        int newY = positionOfAnts.getY() + directionresult.getYDirection();
         if (!(newX < 0 || newX >= boardWidth || newY < 0 || newY >= boardWidth)) {
-            antsInBed.setX(newX);
-            antsInBed.setY(newY);
+            positionOfAnts.setX(newX);
+            positionOfAnts.setY(newY);
         }
     }
-
 }

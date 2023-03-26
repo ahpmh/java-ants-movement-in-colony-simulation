@@ -11,24 +11,24 @@ public class DroneAnt extends Ants{
         int queenX = boardWidth / 2;
         int queenY = boardWidth / 2;
         Direction directionResult = null;
-        if (antsInBed.getX() < queenX ) directionResult = Direction.EAST;
-            else if (antsInBed.getX() > queenX ) directionResult = Direction.WEST;
-                else if (antsInBed.getY() > queenY ) directionResult = Direction.NORTH;
-                    else if (antsInBed.getY() < queenY ) directionResult = Direction.SOUTH;
+        if (positionOfAnts.getX() < queenX ) directionResult = Direction.EAST;
+            else if (positionOfAnts.getX() > queenX ) directionResult = Direction.WEST;
+                else if (positionOfAnts.getY() > queenY ) directionResult = Direction.NORTH;
+                    else if (positionOfAnts.getY() < queenY ) directionResult = Direction.SOUTH;
 
-        int newX = antsInBed.getX() + directionResult.getXDirection();
-        int newY = antsInBed.getY() + directionResult.getYDirection();
+        int newX = positionOfAnts.getX() + directionResult.getXDirection();
+        int newY = positionOfAnts.getY() + directionResult.getYDirection();
         if (!(newX < 0 || newX >= boardWidth || newY < 0 || newY >= boardWidth)) {
-            antsInBed.setX(newX);
-            antsInBed.setY(newY);
+            positionOfAnts.setX(newX);
+            positionOfAnts.setY(newY);
         }
 
-        if ((queenX == antsInBed.getX()) && (queenY == antsInBed.getY())) {
+        if ((queenX == positionOfAnts.getX()) && (queenY == positionOfAnts.getY())) {
             Direction kickedDirection = Direction.getRandomDirection();
             newX = queenX + kickedDirection.getXDirection() * (boardWidth/2);
             newY = queenY + kickedDirection.getYDirection() * (boardWidth/2);
-            antsInBed.setX(newX);
-            antsInBed.setY(newY);
+            positionOfAnts.setX(newX);
+            positionOfAnts.setY(newY);
         }
     }
 }

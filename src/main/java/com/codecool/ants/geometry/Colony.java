@@ -6,7 +6,7 @@ import java.util.Random;
 public class Colony {
 
     private int width;
-    private ArrayList<Ants> antsBed;
+    private ArrayList<Ants> positionsOfAnts;
     private QueenAnt queen;
 
 
@@ -14,10 +14,10 @@ public class Colony {
 /*A queen is created at construction time and is positioned at the center of the colony*/
     public Colony(int width){
         this.width = width;
-        antsBed = new ArrayList<>();
+        positionsOfAnts = new ArrayList<>();
         Position position = new Position(width/2, width/2);
         queen = new QueenAnt(position, width);
-        antsBed.add(queen);
+        positionsOfAnts.add(queen);
     }
 
 
@@ -28,30 +28,30 @@ that set the number of drones, workers, and soldiers to be created*/
         for (int i = 0; i < drones; i++) {
             Position position = Position.getRandomPosition(random, width);
             DroneAnt drone = new DroneAnt(position, width);
-            antsBed.add(drone);
+            positionsOfAnts.add(drone);
         }
         for (int i = 0; i < workers; i++) {
             Position position = Position.getRandomPosition(random, width);
             WorkerAnt worker = new WorkerAnt(position, width);
-            antsBed.add(worker);
+            positionsOfAnts.add(worker);
         }
         for (int i = 0; i < soldiers; i++) {
             Position position = Position.getRandomPosition(random, width);
             SoldierAnt soldier = new SoldierAnt(position, width);
-            antsBed.add(soldier);
+            positionsOfAnts.add(soldier);
         }
     }
 
 
 /* update method which invokes each ants' act method*/
     public void update(){
-        for (Ants ants : antsBed) {
+        for (Ants ants : positionsOfAnts) {
             ants.act();
         }
     }
 
 
-    /*displays the colony map*/
+/*displays the colony map*/
     public void display(){
         String result = "";
         for (int y = 0; y < width; y++) {
@@ -67,8 +67,8 @@ that set the number of drones, workers, and soldiers to be created*/
 
     private String getPositionSymbol(Position position) {
         String result = ". ";
-        for (Ants ant : antsBed) {
-            if (position.getX() == ant.getAntsInBed().getX() && position.getY() == ant.getAntsInBed().getY()) {
+        for (Ants ant : positionsOfAnts) {
+            if (position.getX() == ant.getPositionOfAnts().getX() && position.getY() == ant.getPositionOfAnts().getY()) {
                 result = ant.getSymbol() + " ";
             }
         }

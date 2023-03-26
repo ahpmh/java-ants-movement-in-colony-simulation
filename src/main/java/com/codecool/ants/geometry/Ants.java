@@ -1,19 +1,19 @@
 package com.codecool.ants.geometry;
 
 abstract public class Ants {
-    protected Position antsInBed;
+    protected Position positionOfAnts;
     protected String symbol;
     protected int boardWidth;
 
     public Ants(Position position, int width){
-        antsInBed = position;
+        positionOfAnts = position;
         boardWidth = width;
     }
 
     abstract public void act();
 
-    public Position getAntsInBed() {
-        return antsInBed;
+    public Position getPositionOfAnts() {
+        return positionOfAnts;
     }
 
     public String getSymbol() {

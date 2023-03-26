@@ -11,15 +11,12 @@ public class SoldierAnt extends Ants{
     }
 
     public void act(){
-        int newX = antsInBed.getX() + facingDirection.getXDirection();
-        int newY = antsInBed.getY() + facingDirection.getYDirection();
+        int newX = positionOfAnts.getX() + facingDirection.getXDirection();
+        int newY = positionOfAnts.getY() + facingDirection.getYDirection();
         if (!(newX < 0 || newX >= boardWidth || newY < 0 || newY >= boardWidth)) {
-            antsInBed.setX(newX);
-            antsInBed.setY(newY);
+            positionOfAnts.setX(newX);
+            positionOfAnts.setY(newY);
             facingDirection = Direction.turnLeft(facingDirection);
         }
     }
-
-
-
 }

@@ -8,8 +8,7 @@ public class QueenAnt extends Ants{
     }
 
 
-    public void act(){
-
+    public void act() throws AssertionError{
     }
 
 }
